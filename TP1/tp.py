@@ -15,7 +15,7 @@ donnees = [
     ("Hana", "Physique", 15, "G3"),
     ("Hana", "Math", 8, "G3"),
 ]
-# partie 1 validation des donnes
+
 def valider(record):
     raison = ""
     nom = record[0]
@@ -61,7 +61,7 @@ def getErrors(data):
             error = {"ligne" : record, "raison" : test[1]}
             errors.append(error)
     return errors
-# Partie 3 : Calcule des moyennes
+
 def calculeSum(matieres_dict ,keys_list):
     sum = 0
     if not keys_list:
@@ -78,7 +78,7 @@ def calculeMoyenne(students):
         total = calculeSum(notes, keys)
         moyenneDict[student] = round((total / count) * 100) / 100
     return moyenneDict
-# Partie d'analyse d'anomalies
+
 def analyseAnomalie(students, matieres):
     alerts = []
     for student, notes in students.items():
@@ -99,8 +99,11 @@ def analyseAnomalie(students, matieres):
             err = "Performence instable!!"
             alerts.append(err)
     return alerts    
+            
+
     
-# main et Structuration des donnes
+    
+
 def main():
     cleanData = clean(donnees)
     matieres = set()
@@ -124,6 +127,7 @@ def main():
         else:
             groupes[groupe] = {nome}
 
+    print(students)
     
 
 
